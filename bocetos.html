@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Enciclopetdia wiki">
+        <meta name="keywords" content="mascotas, adopción, cuidados, higiene. limpieza, paseo, peludo, correa, perro, gato, ave, dueño,
+        animal, humano, doméstico, alimento, arenero, desechos, ropa, accesorios, pechera, croqueta">      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bocetos</title>
+        <link rel="stylesheet" href="css/bocetos.css">
+    </head>
+
+
+
+
+    <body>
+    <header>
+        <h1>Mi Wikipedia</h1>
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="marco.html">Marco Teórico</a>
+        <a href="bocetos.html">Bocetos</a>
+        </nav>
+    </header>
+
+     <section class="gallery">
+    <h2>Galería de Bocetos ✏️</h2>
+    <div class="grid">
+      <!-- Usa el HREF como ruta a la imagen grande -->
+      <a href="img/adopción.png"><img src="img/adopción.png" alt="Boceto 1" loading="lazy"></a>
+      <a href="img/afectivo.png"><img src="img/afectivo.png" alt="Boceto 2" loading="lazy"></a>
+      <a href="img/aliemtnascion.png"><img src="img/aliemtnascion.png" alt="Boceto 3" loading="lazy"></a>
+      <a href="img/amistad.png"><img src="img/amistad.png" alt="Boceto 4" loading="lazy"></a>
+      <a href="img/cariño.png"><img src="img/cariño.png" alt="Boceto 5" loading="lazy"></a>
+      <a href="img/cepillado.png"><img src="img/cepillado.png" alt="Boceto 5" loading="lazy"></a>
+      <a href="img/cuidaod.png"><img src="img/cuidaod.png" alt="Boceto 5" loading="lazy"></a>
+      <a href="img/decision.png"><img src="img/decision.png" alt="Boceto 5" loading="lazy"></a>
+      <a href="img/fuerza.png"><img src="img/fuerza.png" alt="Boceto 5" loading="lazy"></a>
+      <a href="img/paseo.png"><img src="img/paseo.png" alt="Boceto 5" loading="lazy"></a>
+      <a href="img/pelujdo.png"><img src="img/pelujdo.png" alt="Boceto 5" loading="lazy"></a>
+      <a href="img/RESÓNSABILIDA.png"><img src="img/RESÓNSABILIDA.png" alt="Boceto 5" loading="lazy"></a>
+      <a href="img/salud.png"><img src="img/salud.png" alt="Boceto 5" loading="lazy"></a>
+    </div>
+  </section>
+
+    <!-- Lightbox -->
+  <div id="lightbox" class="lb" aria-hidden="true">
+    <button class="lb-close" aria-label="Cerrar">&times;</button>
+    <button class="lb-prev" aria-label="Anterior">&#10094;</button>
+    <img class="lb-img" src="" alt="" tabindex="-1"/>
+    <button class="lb-next" aria-label="Siguiente">&#10095;</button>
+    <div class="lb-caption"></div>
+  </div>
+
+    <!-- JS: colócalo justo antes del </body> -->
+  <script>
+    (function () {
+      const lb = document.getElementById('lightbox');
+      const lbImg = lb.querySelector('.lb-img');
+      const lbCap = lb.querySelector('.lb-caption');
+      const thumbs = Array.from(document.querySelectorAll('.grid a'));
+      let idx = 0;
+
+      function openAt(i) {
+        idx = (i + thumbs.length) % thumbs.length;
+        const a = thumbs[idx];
+        const src = a.getAttribute('href');
+        const alt = a.querySelector('img').getAttribute('alt') || '';
+        lbImg.src = src;
+        lbImg.alt = alt;
+        lbCap.textContent = alt;
+        lb.classList.add('open');
+        document.body.classList.add('lb-open');
+        lb.setAttribute('aria-hidden', 'false');
+        lbImg.focus();
+      }
+
+      function closeLB() {
+        lb.classList.remove('open');
+        document.body.classList.remove('lb-open');
+        lb.setAttribute('aria-hidden', 'true');
+        lbImg.src = '';
+      }
+
+      thumbs.forEach((a, i) => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();      // evita que abra el archivo en la pestaña
+          openAt(i);
+        });
+      });
+
+      lb.querySelector('.lb-close').addEventListener('click', closeLB);
+      lb.querySelector('.lb-prev').addEventListener('click', () => openAt(idx - 1));
+      lb.querySelector('.lb-next').addEventListener('click', () => openAt(idx + 1));
+
+      // Cerrar al hacer clic en el fondo
+      lb.addEventListener('click', (e) => { if (e.target === lb) closeLB(); });
+
+      // Teclado: Esc, flechas
+      document.addEventListener('keydown', (e) => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLB();
+        if (e.key === 'ArrowLeft') openAt(idx - 1);
+        if (e.key === 'ArrowRight') openAt(idx + 1);
+      });
+    })();
+  </script>
+
+
+    <footer>
+        <p>Mi Wikipedia © 2025</p>
+    </footer>
+    </body>
+</html>
