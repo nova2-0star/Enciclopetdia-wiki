@@ -1,6 +1,4 @@
-/* ===================
-   Estilos Marco Teórico
-=================== */
+/* =================== Estilos Marco Teórico =================== */
 
 *{
     margin: 0;
@@ -68,13 +66,13 @@ nav a:hover {
 
 .content h2 {
   font-size: 2rem;
-  color: #ff7a00; /* naranja */
-  border-bottom: 3px solid #00c2ff; /* línea celeste tipo Wikipedia */
+  color: #ff7a00;
+  border-bottom: 3px solid #00c2ff;
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
-/* ===== Definiciones estilo Wiki ===== */
+/* ============ Definiciones ============ */
 .article {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
@@ -94,26 +92,7 @@ nav a:hover {
   text-align: justify;
 }
 
-/* ===== Tablas estilo Wiki ===== */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  font-size: 0.95rem;
-}
-
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 0.6rem;
-  text-align: left;
-}
-
-table th {
-  background: #f0f8ff; /* celeste clarito */
-  color: #333;
-}
-
-/* ===== Enlaces tipo Wikipedia ===== */
+/* ================ División bonita y pie ================= */
 .content a {
   color: #00c2ff;
   text-decoration: none;
