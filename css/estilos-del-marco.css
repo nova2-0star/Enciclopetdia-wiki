@@ -92,6 +92,18 @@ nav a:hover {
   text-align: justify;
 }
 
+.concepto {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.concepto img {
+  max-width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
 /* ================ División bonita y pie ================= */
 .content a {
   color: #00c2ff;
