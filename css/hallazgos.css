@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    line-height: 1.5;
+    background-color: #ffffff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleaway", sans-serif;
+}
+
+header {
+    background: linear-gradient(90deg, #ff4800, #ffa600);
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 2rem;
+
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: "Bahiana", sans-serif;
+    font-weight: 500;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0.5rem;
+
+}
+
+nav a {
+    color: #7ca6ff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd966;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background-color: white;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.home-container h1 {
+  font-size: 2.5rem;
+  color: #ff7a00; /* naranja */
+  margin-bottom: 1rem;
+}
+
+.home-container p {
+  max-width: 700px;
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+ /*El copypaste*/
+
+.hallazgos {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.hallazgos h2 {
+  color: #ff7b00; /* Naranja */
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.insights-grid ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 3rem;
+  list-style-type: decimal;
+  padding-left: 2rem;
+  line-height: 1.6;
+}
+
+.hallazgos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.hallazgo {
+  background-color: #f9fafb;
+  border-left: 5px solid #0099cc; /* Celeste */
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hallazgo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hallazgo h3 {
+  color: #0099cc;
+  margin-bottom: 0.5rem;
+}
+
+
+/*p a t a s*/
+footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+}
